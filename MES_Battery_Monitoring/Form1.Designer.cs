@@ -28,21 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnFilterDefective = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnLoadAll = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(51, 91);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 37;
+            this.dataGridView1.Size = new System.Drawing.Size(1467, 482);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnFilterDefective
+            // 
+            this.btnFilterDefective.Location = new System.Drawing.Point(51, 594);
+            this.btnFilterDefective.Name = "btnFilterDefective";
+            this.btnFilterDefective.Size = new System.Drawing.Size(1467, 40);
+            this.btnFilterDefective.TabIndex = 1;
+            this.btnFilterDefective.Text = "FilterDefective";
+            this.btnFilterDefective.UseVisualStyleBackColor = true;
+            this.btnFilterDefective.Click += new System.EventHandler(this.btnFilterDefective_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(1290, 33);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 40);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnLoadAll
+            // 
+            this.btnLoadAll.Location = new System.Drawing.Point(1409, 33);
+            this.btnLoadAll.Name = "btnLoadAll";
+            this.btnLoadAll.Size = new System.Drawing.Size(113, 40);
+            this.btnLoadAll.TabIndex = 4;
+            this.btnLoadAll.Text = "LoadAll";
+            this.btnLoadAll.UseVisualStyleBackColor = true;
+            this.btnLoadAll.Click += new System.EventHandler(this.btnLoadAll_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(51, 38);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(1233, 35);
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.Text = "Write Battery_ID or Status";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1569, 700);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnLoadAll);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnFilterDefective);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnFilterDefective;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnLoadAll;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 
