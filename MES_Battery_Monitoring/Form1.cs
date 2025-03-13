@@ -26,7 +26,7 @@ namespace MES_Battery_Monitoring
         {
             LoadBatteryData(); // 데이터 불러오기
 
-            // 🔹 INSPECTIONDATE 컬럼이 존재하는지 확인 후 날짜 포맷 변경
+            //INSPECTIONDATE 컬럼이 존재하는지 확인 후 날짜 포맷 변경
             if (dataGridView1.Columns.Contains("INSPECTIONDATE"))
             {
                 dataGridView1.Columns["INSPECTIONDATE"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
@@ -144,5 +144,70 @@ namespace MES_Battery_Monitoring
         {
 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("수정할 데이터를 선택하세요.");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+
+            int batteryID = Convert.ToInt32(row.Cells["BATTERYID"].Value);
+            double voltage = Convert.ToDouble(row.Cells["VOLTAGE"].Value);
+            double current = Convert.ToDouble(row.Cells["CURRENTVALUE"].Value);
+            double temperature = Convert.ToDouble(row.Cells["TEMPERATURE"].Value);
+            double resistance = Convert.ToDouble(row.Cells["RESISTANCE"].Value);
+            string status = row.Cells["STATUS"].Value.ToString();
+
+            // 🔹 새로운 수정 폼 띄우기
+            UpdateForm updateForm = new UpdateForm(status, voltage, current, temperature, resistance);
+            if (updateForm.ShowDialog() == DialogResult.OK)
+            {
+                // ✅ 입력값이 제대로 전달되었는지 확인
+                MessageBox.Show($"수정할 데이터 확인\nStatus: {updateForm.NewStatus}\nVoltage: {updateForm.NewVoltage}\nCurrent: {updateForm.NewCurrent}\nTemperature: {updateForm.NewTemperature}\nResistance: {updateForm.NewResistance}");
+
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        string query = "UPDATE BatteryInfo SET Status = :newStatus, Voltage = :newVoltage, CurrentValue = :newCurrent, " +
+                                       "Temperature = :newTemperature, Resistance = :newResistance WHERE BatteryID = :batteryID";
+
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(":newStatus", OracleDbType.Varchar2).Value = updateForm.NewStatus;
+                            cmd.Parameters.Add(":newVoltage", OracleDbType.Double).Value = updateForm.NewVoltage;
+                            cmd.Parameters.Add(":newCurrent", OracleDbType.Double).Value = updateForm.NewCurrent;
+                            cmd.Parameters.Add(":newTemperature", OracleDbType.Double).Value = updateForm.NewTemperature;
+                            cmd.Parameters.Add(":newResistance", OracleDbType.Double).Value = updateForm.NewResistance;
+                            cmd.Parameters.Add(":batteryID", OracleDbType.Int32).Value = batteryID;
+
+                            int result = cmd.ExecuteNonQuery();
+                            if (result > 0)
+                            {
+                                MessageBox.Show("데이터가 성공적으로 업데이트되었습니다.");
+                                LoadBatteryData(); // 데이터 다시 불러오기
+                            }
+                            else
+                            {
+                                MessageBox.Show("데이터 업데이트에 실패했습니다.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("오류 발생: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

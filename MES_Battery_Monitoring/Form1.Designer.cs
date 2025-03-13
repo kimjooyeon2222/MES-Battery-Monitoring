@@ -33,6 +33,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnLoadAll = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +52,9 @@
             // 
             // btnFilterDefective
             // 
-            this.btnFilterDefective.Location = new System.Drawing.Point(51, 594);
+            this.btnFilterDefective.Location = new System.Drawing.Point(1133, 594);
             this.btnFilterDefective.Name = "btnFilterDefective";
-            this.btnFilterDefective.Size = new System.Drawing.Size(1467, 40);
+            this.btnFilterDefective.Size = new System.Drawing.Size(385, 40);
             this.btnFilterDefective.TabIndex = 1;
             this.btnFilterDefective.Text = "FilterDefective";
             this.btnFilterDefective.UseVisualStyleBackColor = true;
@@ -86,11 +88,32 @@
             this.txtSearch.TabIndex = 5;
             this.txtSearch.Text = "Write Battery_ID or Status";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(51, 594);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(400, 40);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(577, 594);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(432, 40);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1569, 700);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnLoadAll);
             this.Controls.Add(this.btnSearch);
@@ -112,6 +135,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnLoadAll;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
