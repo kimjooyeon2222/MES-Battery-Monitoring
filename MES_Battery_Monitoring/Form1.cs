@@ -24,10 +24,17 @@ namespace MES_Battery_Monitoring
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           LoadBatteryData(); // 데이터 불러오기
-           Dock = DockStyle.Fill;
+            LoadBatteryData(); // 데이터 불러오기
 
+            // 🔹 INSPECTIONDATE 컬럼이 존재하는지 확인 후 날짜 포맷 변경
+            if (dataGridView1.Columns.Contains("INSPECTIONDATE"))
+            {
+                dataGridView1.Columns["INSPECTIONDATE"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+            }
+
+            Dock = DockStyle.Fill; // DataGridView 크기 자동 확장
         }
+
 
 
 
