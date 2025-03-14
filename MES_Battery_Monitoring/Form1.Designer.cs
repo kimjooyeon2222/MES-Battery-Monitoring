@@ -35,12 +35,13 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(51, 91);
             this.dataGridView1.Name = "dataGridView1";
@@ -52,9 +53,9 @@
             // 
             // btnFilterDefective
             // 
-            this.btnFilterDefective.Location = new System.Drawing.Point(1133, 594);
+            this.btnFilterDefective.Location = new System.Drawing.Point(1337, 38);
             this.btnFilterDefective.Name = "btnFilterDefective";
-            this.btnFilterDefective.Size = new System.Drawing.Size(385, 40);
+            this.btnFilterDefective.Size = new System.Drawing.Size(181, 40);
             this.btnFilterDefective.TabIndex = 1;
             this.btnFilterDefective.Text = "FilterDefective";
             this.btnFilterDefective.UseVisualStyleBackColor = true;
@@ -62,7 +63,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1290, 33);
+            this.btnSearch.Location = new System.Drawing.Point(1099, 38);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(113, 40);
             this.btnSearch.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             // btnLoadAll
             // 
-            this.btnLoadAll.Location = new System.Drawing.Point(1409, 33);
+            this.btnLoadAll.Location = new System.Drawing.Point(1218, 38);
             this.btnLoadAll.Name = "btnLoadAll";
             this.btnLoadAll.Size = new System.Drawing.Size(113, 40);
             this.btnLoadAll.TabIndex = 4;
@@ -84,13 +85,13 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(51, 38);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1233, 35);
+            this.txtSearch.Size = new System.Drawing.Size(1023, 35);
             this.txtSearch.TabIndex = 5;
             this.txtSearch.Text = "Write Battery_ID or Status";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(51, 594);
+            this.btnUpdate.Location = new System.Drawing.Point(595, 594);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(400, 40);
             this.btnUpdate.TabIndex = 6;
@@ -100,18 +101,30 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(577, 594);
+            this.btnDelete.Location = new System.Drawing.Point(1118, 594);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(432, 40);
+            this.btnDelete.Size = new System.Drawing.Size(400, 40);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(51, 594);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(400, 40);
+            this.btnCreate.TabIndex = 8;
+            this.btnCreate.Text = "CREATE";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1569, 700);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtSearch);
@@ -137,6 +150,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
 

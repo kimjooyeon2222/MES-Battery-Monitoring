@@ -33,3 +33,4 @@ C:\Users\zpffj\source\repos\MES_Battery_Monitoring\MES_Battery_Monitoring\obj\De
 C:\Users\zpffj\source\repos\MES_Battery_Monitoring\MES_Battery_Monitoring\obj\Debug\MES_Battery_Monitoring.exe
 C:\Users\zpffj\source\repos\MES_Battery_Monitoring\MES_Battery_Monitoring\obj\Debug\MES_Battery_Monitoring.pdb
 C:\Users\zpffj\source\repos\MES_Battery_Monitoring\MES_Battery_Monitoring\obj\Debug\MES_Battery_Monitoring.UpdateForm.resources
+C:\Users\zpffj\source\repos\MES_Battery_Monitoring\MES_Battery_Monitoring\obj\Debug\MES_Battery_Monitoring.InsertForm.resources

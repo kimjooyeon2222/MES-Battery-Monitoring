@@ -207,7 +207,103 @@ namespace MES_Battery_Monitoring
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // 1. DataGridView에서 선택한 행이 있는지 확인
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("삭제할 데이터를 선택하세요.");
+                return;
+            }
 
+            // 2. 선택된 행 정보 가져오기
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            int batteryID = Convert.ToInt32(row.Cells["BATTERYID"].Value);
+
+            // 3. 삭제 확인 메시지
+            DialogResult confirm = MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인",
+                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                // 4. Oracle DB 연결 후 DELETE 실행
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM BatteryInfo WHERE BatteryID = :batteryID";
+
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(":batteryID", OracleDbType.Int32).Value = batteryID;
+
+                            int result = cmd.ExecuteNonQuery(); // 실행 후 삭제된 행 수 반환
+                            if (result > 0)
+                            {
+                                MessageBox.Show("데이터가 성공적으로 삭제되었습니다.");
+                                LoadBatteryData(); // 새로고침
+                            }
+                            else
+                            {
+                                MessageBox.Show("데이터 삭제에 실패했습니다.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("오류 발생: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            // InsertForm 폼 열기
+            InsertForm insertForm = new InsertForm();
+            if (insertForm.ShowDialog() == DialogResult.OK)
+            {
+                // INSERT 실행 전에 값이 정상적으로 전달되는지 확인
+                MessageBox.Show($"입력한 값 확인\nVoltage: {insertForm.NewVoltage}\nCurrent: {insertForm.NewCurrent}\nTemperature: {insertForm.NewTemperature}\nResistance: {insertForm.NewResistance}\nStatus: {insertForm.NewStatus}");
+
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        string query = @"INSERT INTO BatteryInfo (Voltage, CurrentValue, Temperature, Resistance, Status)
+                                 VALUES (:newVoltage, :newCurrent, :newTemperature, :newResistance, :newStatus)";
+
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            // ✅ 바인드 변수명을 SQL과 일치하도록 수정
+                            cmd.Parameters.Add(":voltage", OracleDbType.Double).Value = insertForm.NewVoltage;
+                            cmd.Parameters.Add(":current", OracleDbType.Double).Value = insertForm.NewCurrent;
+                            cmd.Parameters.Add(":temperature", OracleDbType.Double).Value = insertForm.NewTemperature;
+                            cmd.Parameters.Add(":resistance", OracleDbType.Double).Value = insertForm.NewResistance;
+                            cmd.Parameters.Add(":status", OracleDbType.Varchar2).Value = insertForm.NewStatus;
+
+                            int result = cmd.ExecuteNonQuery();
+                            if (result > 0)
+                            {
+                                MessageBox.Show("데이터가 성공적으로 추가되었습니다.");
+                                LoadBatteryData(); // 새로고침
+                            }
+                            else
+                            {
+                                MessageBox.Show("데이터 추가에 실패했습니다.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("오류 발생: " + ex.Message);
+                    }
+                }
+            }
+        }
 
     }
 }
