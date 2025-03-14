@@ -203,8 +203,14 @@ namespace MES_Battery_Monitoring
             this.Controls.Add(this.txtResistance);
             this.Controls.Add(this.txtStatus);
             this.Name = "UpdateForm";
+            this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
+        }
+
+        private void UpdateForm_Load(object sender, EventArgs e)
+        {
 
         }
     }
