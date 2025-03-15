@@ -13,14 +13,27 @@ namespace MES_Battery_Monitoring
 {
     public partial class Form1 : Form
     {
+        // 환경변수에서 DB 비밀번호 가져오기
+        private string dbPassword = Environment.GetEnvironmentVariable("ORACLE_DB_PASSWORD");
 
-        // Oracle DB 연결 문자열 (비밀번호는 본인 환경에 맞게 변경!)
-        string connectionString = "User Id=system;Password=0000;Data Source=localhost:1521/XE";
+        // Oracle DB 연결 문자열 (비밀번호를 하드코딩하지 않음)
+        private string connectionString;
+       /* // Oracle DB 연결 문자열 (비밀번호는 본인 환경에 맞게 변경!)
+        string connectionString = "User Id=system;Password=0000;Data Source=localhost:1521/XE";*/
 
         public Form1()
         {
             InitializeComponent();
-        }
+            // 환경변수 확인 후 DB 연결 문자열 구성
+            if (string.IsNullOrEmpty(dbPassword))
+            {
+                MessageBox.Show("환경변수 'ORACLE_DB_PASSWORD'가 설정되지 않았습니다. 환경변수를 확인하세요.");
+                Environment.Exit(0); // 프로그램 종료
+            }
+
+            connectionString = $"User Id=system;Password={dbPassword};Data Source=localhost:1521/XE";
+        
+    }
 
         private void Form1_Load(object sender, EventArgs e)
         {
