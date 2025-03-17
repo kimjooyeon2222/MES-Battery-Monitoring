@@ -41,7 +41,7 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Pink;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(51, 91);
             this.dataGridView1.Name = "dataGridView1";
@@ -53,7 +53,7 @@
             // 
             // btnFilterDefective
             // 
-            this.btnFilterDefective.Location = new System.Drawing.Point(1337, 38);
+            this.btnFilterDefective.Location = new System.Drawing.Point(1218, 38);
             this.btnFilterDefective.Name = "btnFilterDefective";
             this.btnFilterDefective.Size = new System.Drawing.Size(181, 40);
             this.btnFilterDefective.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // btnLoadAll
             // 
-            this.btnLoadAll.Location = new System.Drawing.Point(1218, 38);
+            this.btnLoadAll.Location = new System.Drawing.Point(1405, 38);
             this.btnLoadAll.Name = "btnLoadAll";
             this.btnLoadAll.Size = new System.Drawing.Size(113, 40);
             this.btnLoadAll.TabIndex = 4;
