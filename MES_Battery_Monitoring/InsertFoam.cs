@@ -64,7 +64,7 @@ namespace MES_Battery_Monitoring
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(108, 136);
+            this.label6.Location = new System.Drawing.Point(127, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 24);
             this.label6.TabIndex = 24;
@@ -73,7 +73,7 @@ namespace MES_Battery_Monitoring
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 199);
+            this.label5.Location = new System.Drawing.Point(99, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 24);
             this.label5.TabIndex = 23;
@@ -82,7 +82,7 @@ namespace MES_Battery_Monitoring
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(89, 258);
+            this.label4.Location = new System.Drawing.Point(108, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 24);
             this.label4.TabIndex = 22;
@@ -91,7 +91,7 @@ namespace MES_Battery_Monitoring
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 77);
+            this.label3.Location = new System.Drawing.Point(127, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 24);
             this.label3.TabIndex = 21;
@@ -100,7 +100,7 @@ namespace MES_Battery_Monitoring
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 28);
+            this.label1.Location = new System.Drawing.Point(127, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 20;
@@ -109,7 +109,7 @@ namespace MES_Battery_Monitoring
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(452, 318);
+            this.btnCancel.Location = new System.Drawing.Point(471, 356);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 43);
             this.btnCancel.TabIndex = 19;
@@ -119,7 +119,7 @@ namespace MES_Battery_Monitoring
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(273, 318);
+            this.btnOK.Location = new System.Drawing.Point(292, 356);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(102, 43);
             this.btnOK.TabIndex = 18;
@@ -129,42 +129,42 @@ namespace MES_Battery_Monitoring
             // 
             // txtVoltage
             // 
-            this.txtVoltage.Location = new System.Drawing.Point(249, 74);
+            this.txtVoltage.Location = new System.Drawing.Point(268, 112);
             this.txtVoltage.Name = "txtVoltage";
             this.txtVoltage.Size = new System.Drawing.Size(329, 35);
             this.txtVoltage.TabIndex = 17;
             // 
             // txtCurrent
             // 
-            this.txtCurrent.Location = new System.Drawing.Point(249, 133);
+            this.txtCurrent.Location = new System.Drawing.Point(268, 171);
             this.txtCurrent.Name = "txtCurrent";
             this.txtCurrent.Size = new System.Drawing.Size(329, 35);
             this.txtCurrent.TabIndex = 16;
             // 
             // txtTemperature
             // 
-            this.txtTemperature.Location = new System.Drawing.Point(249, 196);
+            this.txtTemperature.Location = new System.Drawing.Point(268, 234);
             this.txtTemperature.Name = "txtTemperature";
             this.txtTemperature.Size = new System.Drawing.Size(329, 35);
             this.txtTemperature.TabIndex = 15;
             // 
             // txtResistance
             // 
-            this.txtResistance.Location = new System.Drawing.Point(249, 255);
+            this.txtResistance.Location = new System.Drawing.Point(268, 293);
             this.txtResistance.Name = "txtResistance";
             this.txtResistance.Size = new System.Drawing.Size(329, 35);
             this.txtResistance.TabIndex = 14;
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(249, 17);
+            this.txtStatus.Location = new System.Drawing.Point(268, 55);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(329, 35);
             this.txtStatus.TabIndex = 13;
             // 
             // InsertForm
             // 
-            this.ClientSize = new System.Drawing.Size(658, 378);
+            this.ClientSize = new System.Drawing.Size(724, 447);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
