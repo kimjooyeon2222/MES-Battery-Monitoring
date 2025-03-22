@@ -87,6 +87,7 @@ namespace MES_Battery_Monitoring
             // 
             // txtStatus
             // 
+            this.txtStatus.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtStatus.Location = new System.Drawing.Point(225, 37);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(329, 35);
@@ -94,6 +95,7 @@ namespace MES_Battery_Monitoring
             // 
             // txtResistance
             // 
+            this.txtResistance.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtResistance.Location = new System.Drawing.Point(225, 275);
             this.txtResistance.Name = "txtResistance";
             this.txtResistance.Size = new System.Drawing.Size(329, 35);
@@ -101,6 +103,7 @@ namespace MES_Battery_Monitoring
             // 
             // txtTemperature
             // 
+            this.txtTemperature.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtTemperature.Location = new System.Drawing.Point(225, 216);
             this.txtTemperature.Name = "txtTemperature";
             this.txtTemperature.Size = new System.Drawing.Size(329, 35);
@@ -108,6 +111,7 @@ namespace MES_Battery_Monitoring
             // 
             // txtCurrent
             // 
+            this.txtCurrent.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtCurrent.Location = new System.Drawing.Point(225, 153);
             this.txtCurrent.Name = "txtCurrent";
             this.txtCurrent.Size = new System.Drawing.Size(329, 35);
@@ -115,6 +119,7 @@ namespace MES_Battery_Monitoring
             // 
             // txtVoltage
             // 
+            this.txtVoltage.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtVoltage.Location = new System.Drawing.Point(225, 94);
             this.txtVoltage.Name = "txtVoltage";
             this.txtVoltage.Size = new System.Drawing.Size(329, 35);
@@ -122,24 +127,26 @@ namespace MES_Battery_Monitoring
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.SystemColors.Info;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(249, 338);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(102, 43);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Info;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(428, 338);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 43);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
