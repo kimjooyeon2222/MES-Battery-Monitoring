@@ -1,7 +1,7 @@
 # ⚡ MES-Battery-Monitoring
 
-> A C# WinForms-based application for monitoring and managing EV battery status within a Manufacturing Execution System (MES) <br>
-> It connects to an Oracle database and provides essential CRUD functionalities, ensuring efficient real-time diagnostics and operations.
+> A C# WinForms-based application for monitoring and managing EV battery status within a Manufacturing Execution System (MES) environment.<br>
+> It connects to an Oracle database and provides essential CRUD functionalities, ensuring efficient real-time diagnostics and operations in factory settings.
 
 ---
 
