@@ -7,7 +7,7 @@
 
 ## ✨ Key Features
 
-| 기능 | 설명 |
+| Feature | Description |
 |------|------|
 | 🔍 **Search** | Search by `BatteryID` (numeric) or `Status` (text) |
 | 🔄 **Real-Time View** | Fetch and display battery records from Oracle DB (`BatteryInfo` table) |
