@@ -127,7 +127,7 @@ namespace MES_Battery_Monitoring
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.SystemColors.Info;
+            this.btnOK.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(249, 338);
             this.btnOK.Name = "btnOK";
@@ -139,7 +139,7 @@ namespace MES_Battery_Monitoring
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.Info;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(428, 338);
             this.btnCancel.Name = "btnCancel";
