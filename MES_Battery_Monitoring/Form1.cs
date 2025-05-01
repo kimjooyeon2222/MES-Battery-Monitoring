@@ -1,4 +1,4 @@
-﻿// 생략된 using 문 동일
+﻿
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace MES_Battery_Monitoring
                         dataGridView1.DataSource = dt;
                     }
                 }
-                catch (OracleException ex) // ✅ Oracle 전용 예외
+                catch (OracleException ex) // Oracle 전용 예외
                 {
                     MessageBox.Show("DB 오류 발생: " + ex.Message);
                 }
@@ -99,7 +99,7 @@ namespace MES_Battery_Monitoring
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
 
-                        // ✅ 검색 결과 없을 때 알림
+                        // 검색 결과 없을 때 알림
                         if (dt.Rows.Count == 0)
                         {
                             MessageBox.Show("검색 결과가 없습니다.");
