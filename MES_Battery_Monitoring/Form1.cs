@@ -20,6 +20,30 @@ namespace MES_Battery_Monitoring
         public Form1()
         {
             InitializeComponent();
+            // placeholder 텍스트 설정
+            txtSearch.Text = "Write Battery_ID or Status";
+            txtSearch.ForeColor = Color.Gray;
+
+            // 포커스 들어올 때
+            txtSearch.Enter += (s, e) =>
+            {
+                if (txtSearch.Text == "Write Battery_ID or Status")
+                {
+                    txtSearch.Text = "";
+                    txtSearch.ForeColor = Color.Black;
+                }
+            };
+
+            // 포커스 나갈 때
+            txtSearch.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtSearch.Text))
+                {
+                    txtSearch.Text = "검색어를 입력하세요";
+                    txtSearch.ForeColor = Color.Gray;
+                }
+            };
+
             if (string.IsNullOrEmpty(dbPassword))
             {
                 MessageBox.Show("환경변수 'ORACLE_DB_PASSWORD'가 설정되지 않았습니다. 환경변수를 확인하세요.");
@@ -72,6 +96,13 @@ namespace MES_Battery_Monitoring
         {
             string searchValue = txtSearch.Text.Trim();
 
+            // 플레이스홀더일 경우 검색 안 함
+            if (string.IsNullOrWhiteSpace(searchValue) || searchValue == "검색어를 입력하세요")
+            {
+                MessageBox.Show("검색어를 입력하세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
                 try
@@ -99,7 +130,6 @@ namespace MES_Battery_Monitoring
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
 
-                        // 검색 결과 없을 때 알림
                         if (dt.Rows.Count == 0)
                         {
                             MessageBox.Show("검색 결과가 없습니다.");
@@ -116,6 +146,7 @@ namespace MES_Battery_Monitoring
                 }
             }
         }
+
 
         private void btnLoadAll_Click(object sender, EventArgs e)
         {
